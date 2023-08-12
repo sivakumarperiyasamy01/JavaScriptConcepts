@@ -182,26 +182,22 @@ console.log(sum)
 
 // traditional way 
 
-const num=[2,1,7,8,3,6];
+const num=[2,1,7,9,3,6];
 
 
-const max=(number1)=>{
+const newNum=function(num){
+      let accumlate=0;
 
-   let maximum=0;
+      for(i=0; i<num.length;i++){
 
-   for (i=0;i<number1.length;i++){
-
-      if(number1[i]>maximum){
-          maximum= number1[i]    
-
-      }
-      return maximum;
+        (num[i]>accumlate?accumlate=num[i]:null)
+      
    }
-
+      return accumlate;
 
 }
 
-console.log(max(num));
+console.log(newNum(num))
 
 
 // using reduce method 
@@ -211,7 +207,7 @@ const sumofvalue=num.reduce((acc,curr)=>{
    if(curr>acc){
       acc=curr
    }
-      return acc;
+      return acc
 
 },0)
 
@@ -219,4 +215,84 @@ console.log(sumofvalue)
 
 
 
-// 
+// tricky map 
+
+const objarray=[
+
+   {
+      firstName:"siva",
+       LastName:"kumar",
+       age:26
+   },
+
+   {
+      firstName:"santhiya",
+      LastName:"p",
+       age:19
+   },
+
+   {
+      firstName:"gowtham",
+       LastName:"p",
+       age:25
+   },
+
+   {
+      firstName:"saraswathy",
+       LastName:"p",
+       age:59
+   },
+   {
+      firstName:"periyasamy",
+       LastName:"m",
+       age:68
+   }
+]
+
+// list all full name 
+
+const fullName= objarray.map((z)=>{
+ const fullname= z.firstName+ " " +z.LastName;
+ return fullname
+
+}
+)
+
+console.log(fullName)
+
+
+// function chaining 
+
+// findout different ages in this array and findout the same ages count , how many people with same age 
+
+// fist name of all the people whose age is below 30 using filter method 
+
+// fist filter object where the age is below 30 
+
+// finaly we need to get ["gowtham","santhiya ","periyasamy"]
+
+// if you are using {} need to write return 
+
+const output= objarray.filter((x)=>
+x.age<30
+).map((x)=>
+   x.firstName
+)
+
+
+console.log(output)
+
+
+// using reduce method 
+
+const ouput1=objarray.reduce((acc,curr)=>{
+
+   if(curr.age<30){
+      acc.push(curr.firstName)
+   }
+
+   return acc
+
+},[])
+
+console.log(ouput1)
