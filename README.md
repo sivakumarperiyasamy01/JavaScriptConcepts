@@ -1,5 +1,5 @@
 # All JavaScriptConcepts
-# call bakc function 
+# call back function 
 # var let const 
 # promieses 
 # async and await 
