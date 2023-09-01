@@ -18,3 +18,8 @@ function greet(){
   let x =10
   console.log(x)
 }
+
+
+// var keyword using variables are hoisted with default value 
+// using let and const we cant access before initialization 
+// var ,let we can do reassignment. const will not allow for reassignment
