@@ -12,4 +12,7 @@
 11) filter , map , reduce
 12) primitive types and refrence types
 13) functions 
-
+14) prototype
+15) call back hell
+16) bind and apply
+17) java script working principle 
